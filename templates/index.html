@@ -1,65 +1,6 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
-    <title>DevFolio Bootstrap Portfolio Template - Index</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
-
-    <!-- Favicons -->
-    <link href="{% static 'assets/img/favicon.png' %}" rel="icon" />
-    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon" />
-
-    <!-- Vendor CSS Files -->
-    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
-    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet" />
-    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet" />
-    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
-
-    <!-- Template Main CSS File -->
-    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
-
-    <!--         =======================================================
-  * Template Name: DevFolio
-  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ========================================================         -->
-  </head>
-
-  <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-      <div class="container d-flex align-items-center justify-content-between">
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo"><img src="{%static 'assets/img/logo.png'%}" alt="" class="img-fluid"></a> -->
-
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li>
-              <a class="nav-link scrollto active" href="#hero">Home</a>
-            </li>
-            <li>
-              <a class="nav-link scrollto" href="#about">About</a>
-            </li>
-            <li>
-              <a class="nav-link scrollto" href="#work">Projects</a>
-            </li>
-            <li>
-              <a class="nav-link scrollto" href="#contact">Contact</a>
-            </li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <!-- .navbar -->
-      </div>
-    </header>
-    <!-- End Header -->
-
+{%block content%}
     <!-- ======= Hero Section ======= -->
     <div id="hero" class="hero route bg-image" style="background-image: url({% static 'assets/img/hero-bg.jpg' %})">
       <div class="overlay-itro"></div>
@@ -67,9 +8,9 @@
         <div class="table-cell">
           <div class="container">
             <!-- <p class="display-6 color-d">Hello, world!</p> -->
-            <h1 class="hero-title mb-4">I am Mehdi Mousavi</h1>
+            <h1 class="hero-title mb-4">I am {{NAME}} {{LAST_NAME}}</h1>
             <p class="hero-subtitle">
-              <span class="typed" data-typed-items="Mechanical Engineer, Backend Developer,"></span>
+              <span class="typed" data-typed-items="Mechanical Engineer, {{Profile}},"></span>
             </p>
             <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
           </div>
@@ -96,16 +37,16 @@
                       <div class="col-sm-6 col-md-7">
                         <div class="about-info">
                           <p>
-                            <span class="title-s">Name:</span> <span>Mehdi Mousavi</span>
+                            <span class="title-s">Name:</span> <span>{{NAME}} {{LAST_NAME}}</span>
                           </p>
                           <p>
-                            <span class="title-s">Profile:</span> <span>Backend Developer</span>
+                            <span class="title-s">Profile:</span> <span>{{Profile}}</span>
                           </p>
                           <p>
-                            <span class="title-s">Email:</span> <span>mehdi.mousavi.rad1@gmail.com</span>
+                            <span class="title-s">Email:</span> <span>{{Email}}</span>
                           </p>
                           <p>
-                            <span class="title-s">Phone:</span> <span>(+98)916 854 3458</span>
+                            <span class="title-s">Phone:</span> <span>{{Phone}}</span>
                           </p>
                         </div>
                       </div>
@@ -239,7 +180,7 @@
                 <div class="work-content">
                   <div class="row">
                     <div class="col-sm-8">
-                      <h2 class="w-title">Backend Developer</h2>
+                      <h2 class="w-title"> {{Profile}} </h2>
                       <div class="w-more">
                         <span class="w-ctegory">Django</span>
                       </div>
@@ -261,7 +202,7 @@
                 <div class="work-content">
                   <div class="row">
                     <div class="col-sm-8">
-                      <h2 class="w-title">Backend Developer</h2>
+                      <h2 class="w-title">{{Profile}}</h2>
                       <div class="w-more">
                         <span class="w-ctegory">Django</span>
                       </div>
@@ -334,10 +275,10 @@
                             <span class="bi bi-geo-alt"></span> Khuzestan Abadan Brazil
                           </li>
                           <li>
-                            <span class="bi bi-phone"></span> (+98) 916-854-3458
+                            <span class="bi bi-phone"></span> {{Phone}}
                           </li>
                           <li>
-                            <span class="bi bi-envelope"></span> mehdi.mousavi.rad1@gmail.com
+                            <span class="bi bi-envelope"></span> {{Email}}
                           </li>
                         </ul>
                       </div>
@@ -384,3 +325,4 @@
     <script src="{% static 'assets/js/main.js' %}"></script>
   </body>
 </html>
+{%endblock%}
